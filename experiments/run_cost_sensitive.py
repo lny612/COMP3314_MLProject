@@ -362,7 +362,8 @@ def run_cost_sensitive_comparison(i, use_cost_sens=False, use_streed=False, cost
 
 if __name__ == "__main__":
     np.random.seed(0)
-    slurm_id = int(sys.argv[1])
+    # Be robust when no CLI argument is passed (e.g., running from IDE)
+    slurm_id = int(sys.argv[1]) if len(sys.argv) > 1 else 0
     # for i in range(50):
     for cost_sens_scalar in [0, 1e-4, 1e-3, 1e-2, 1e-1, 1]:
         run_cost_sensitive_comparison(slurm_id, use_streed=True, cost_sens_scalar=cost_sens_scalar)

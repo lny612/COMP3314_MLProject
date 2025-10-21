@@ -179,10 +179,12 @@ if __name__ == '__main__':
     possible_dfs = [
         'tic-tac-toe.csv', "wisconsin.csv", "coupon_full.csv", "compas_complete.csv", "wine_quality.csv",
         "broward_general_2y.csv", 'fico_complete.csv', 'iris_setosa.csv', 'iris_versicolor.csv',
-        'iris_virginica.csv', 'spiral.csv', 'netherlands.csv'
+        'iris_virginica.csv', 'spiral.csv',
+        # 'netherlands.csv'
     ]
     # for df in possible_dfs:
-    slurm_id = int(sys.argv[1])
+    # Be robust when no CLI argument is passed (e.g., running from IDE)
+    slurm_id = int(sys.argv[1]) if len(sys.argv) > 1 else 0
     df = possible_dfs[slurm_id]
 
     # for reg in [0.04, 0.02, 0.01, 0.005]:
