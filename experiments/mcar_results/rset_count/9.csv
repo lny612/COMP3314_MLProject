@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+iris_versicolor.csv,rset,ours,True,0.01,4,1,2,2,1
+iris_versicolor.csv,rset,ours,True,0.01,4,1,2,2,1
+iris_versicolor.csv,rset,ours,True,0.01,4,1,2,2,1
+iris_versicolor.csv,rset,ours,True,0.01,4,26,46,66,26
+iris_versicolor.csv,rset,ours,True,0.01,4,160,380,788,160

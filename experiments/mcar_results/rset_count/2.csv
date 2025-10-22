@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+wisconsin.csv,rset,ours,True,0.01,4,2428,6288,14642,2428
+wisconsin.csv,rset,ours,True,0.01,4,220,394,1331,220
+wisconsin.csv,rset,ours,True,0.01,4,1333,4351,6418,1333
+wisconsin.csv,rset,ours,True,0.01,4,1041,2567,5374,1041
+wisconsin.csv,rset,ours,True,0.01,4,419,871,2398,419

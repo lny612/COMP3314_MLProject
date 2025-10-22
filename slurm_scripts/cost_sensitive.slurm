@@ -10,5 +10,8 @@
 
 # RUN THIS FILE FROM THE BASE DIRECTORY
 
+# Activate virtual environment
+source ven1/bin/activate
+
 # run baseline 
 python -u -m experiments.run_cost_sensitive $SLURM_ARRAY_TASK_ID

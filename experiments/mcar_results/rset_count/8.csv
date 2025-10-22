@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+iris_virginica.csv,rset,ours,True,0.01,4,4,8,23,4
+iris_virginica.csv,rset,ours,True,0.01,4,25,45,183,25
+iris_virginica.csv,rset,ours,True,0.01,4,5,8,21,5
+iris_virginica.csv,rset,ours,True,0.01,4,2,3,6,2
+iris_virginica.csv,rset,ours,True,0.01,4,7,9,21,7

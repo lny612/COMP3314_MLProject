@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+wine_quality.csv,rset,ours,True,0.01,4,1192,1835,5059,1192
+wine_quality.csv,rset,ours,True,0.01,4,1643,2638,6732,1643
+wine_quality.csv,rset,ours,True,0.01,4,609,1041,3137,609
+wine_quality.csv,rset,ours,True,0.01,4,1755,2827,6839,1755
+wine_quality.csv,rset,ours,True,0.01,4,672,1083,3459,672

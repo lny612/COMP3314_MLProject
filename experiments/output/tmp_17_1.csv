@@ -1,0 +1,21 @@
+0 1
+1 0
+Attribute-name test-cost discount group binarize-begin binarize-end
+Feat0_o 9 9 a 0 0
+Feat0_x 9 9 a 1 1
+Feat1_o 5 5 a 2 2
+Feat1_x 4 4 a 3 3
+Feat2_o 1 1 a 4 4
+Feat2_x 3 3 a 5 5
+Feat3_o 4 4 a 6 6
+Feat3_x 5 5 a 7 7
+Feat4_o 6 6 a 8 8
+Feat4_x 1 1 a 9 9
+Feat5_o 8 8 a 10 10
+Feat5_x 2 2 a 11 11
+Feat6_o 5 5 a 12 12
+Feat6_x 3 3 a 13 13
+Feat7_o 3 3 a 14 14
+Feat7_x 7 7 a 15 15
+Feat8_o 1 1 a 16 16
+Feat8_x 7 7 a 17 17

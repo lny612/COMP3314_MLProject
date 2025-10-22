@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+spiral.csv,rset,ours,True,0.01,4,21,39,70,21
+spiral.csv,rset,ours,True,0.01,4,5,8,16,5
+spiral.csv,rset,ours,True,0.01,4,4,6,8,4
+spiral.csv,rset,ours,True,0.01,4,8,14,21,8
+spiral.csv,rset,ours,True,0.01,4,9,14,38,9

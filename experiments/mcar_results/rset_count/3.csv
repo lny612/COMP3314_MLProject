@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+coupon_full.csv,rset,ours,True,0.01,4,144,260,775,144
+coupon_full.csv,rset,ours,True,0.01,4,191,397,1126,191
+coupon_full.csv,rset,ours,True,0.01,4,120,226,686,120
+coupon_full.csv,rset,ours,True,0.01,4,215,428,1263,215
+coupon_full.csv,rset,ours,True,0.01,4,148,261,697,148

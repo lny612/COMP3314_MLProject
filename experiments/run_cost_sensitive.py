@@ -165,9 +165,9 @@ def run_cost_sensitive_comparison(i, use_cost_sens=False, use_streed=False, cost
     #         for gamma in [0.75, 0.9, 0.95]:
     results = pd.DataFrame()
     for dataset in [
-        "higgs.csv", "coupon_full.csv", 'wine_quality.csv', 'compas_complete.csv', 'wisconsin.csv',
+        "coupon_full.csv", 'wine_quality.csv', 'compas_complete.csv', 'wisconsin.csv',
         "broward_general_2y.csv", 'fico_complete.csv', 'iris_setosa.csv', 'iris_versicolor.csv',
-        'iris_virginica.csv', 'spiral.csv', 'tic-tac-toe.csv', 'netherlands.csv'
+        'iris_virginica.csv', 'spiral.csv', 'tic-tac-toe.csv'
     ]:
         binarization_config = {
             "missing_values": [-7, -8, -9] if 'fico' in dataset else np.nan,
@@ -198,7 +198,7 @@ def run_cost_sensitive_comparison(i, use_cost_sens=False, use_streed=False, cost
                 column_names, 
                 bin_to_original, 
                 cost_sens_scalar=cost_sens_scalar,
-                filename=f"/home/users/jcd97/code/rashomon-submodels/experiments/configs/tmp_{i}_{cost_sens_scalar}.csv"
+                filename=f"experiments/output/tmp_{i}_{cost_sens_scalar}.csv"
             )
             misclass_cost = 1
             line_prepender(filename, f"{int(misclass_cost)} 0")

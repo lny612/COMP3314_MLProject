@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+iris_setosa.csv,rset,ours,True,0.01,4,2,2,2,2
+iris_setosa.csv,rset,ours,True,0.01,4,2,2,2,2
+iris_setosa.csv,rset,ours,True,0.01,4,2,2,2,2
+iris_setosa.csv,rset,ours,True,0.01,4,2,2,2,2
+iris_setosa.csv,rset,ours,True,0.01,4,2,2,2,2

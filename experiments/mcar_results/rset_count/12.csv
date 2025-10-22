@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+compas_complete.csv,rset,ours,False,0.01,4,2789,5284,18097,2789
+compas_complete.csv,rset,ours,False,0.01,4,1572,2800,8533,1572
+compas_complete.csv,rset,ours,False,0.01,4,3372,6117,19681,3372
+compas_complete.csv,rset,ours,False,0.01,4,815,1459,4567,815
+compas_complete.csv,rset,ours,False,0.01,4,2131,3909,13032,2131

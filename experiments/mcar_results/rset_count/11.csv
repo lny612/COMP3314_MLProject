@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+broward_general_2y.csv,rset,ours,True,0.01,4,227,477,1436,227
+broward_general_2y.csv,rset,ours,True,0.01,4,1138,1974,5854,1138
+broward_general_2y.csv,rset,ours,True,0.01,4,887,1682,3568,887
+broward_general_2y.csv,rset,ours,True,0.01,4,1402,2776,8283,1402
+broward_general_2y.csv,rset,ours,True,0.01,4,642,1405,2754,642

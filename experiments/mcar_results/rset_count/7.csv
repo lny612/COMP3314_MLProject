@@ -1,0 +1,6 @@
+dataset,base_tree,NaN_condition,balanced,lambda,depth,rset_size_unique,rset_size,rset_size_no_trivial_extensions,rset_size_unique_no_trivial_extensions
+tic-tac-toe.csv,rset,ours,True,0.01,4,44,88,149,44
+tic-tac-toe.csv,rset,ours,True,0.01,4,69,160,280,69
+tic-tac-toe.csv,rset,ours,True,0.01,4,14,36,61,14
+tic-tac-toe.csv,rset,ours,True,0.01,4,2,7,37,2
+tic-tac-toe.csv,rset,ours,True,0.01,4,20,49,89,20
