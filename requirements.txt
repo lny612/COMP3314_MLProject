@@ -61,7 +61,7 @@ timbertrek==0.1.7
 tomli==2.0.1
 tqdm==4.66.4
 traitlets==5.14.3
-treefarms==0.2.3
+treefarms==0.2.4
 typing_extensions==4.12.1
 tzdata==2024.1
 urllib3==2.2.2
