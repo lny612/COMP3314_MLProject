@@ -333,7 +333,8 @@ def run_cost_sensitive_comparison(i, use_cost_sens=False, use_streed=False, cost
                 "cost_by_var": [cost_by_var_unbinned],
                 "tree_accuracy": [(m.predict(X_test) == y_test).mean()],
                 "use_cost_sens": [use_cost_sens],
-                "cost_sens_scalar": [cost_sens_scalar]
+                "cost_sens_scalar": [cost_sens_scalar],
+                "tree_depth": [3]
             })
         ])
 
@@ -352,7 +353,8 @@ def run_cost_sensitive_comparison(i, use_cost_sens=False, use_streed=False, cost
                 "cost_by_var": [cost_by_var_unbinned],
                 "tree_accuracy": [(m.predict(X_test) == y_test).mean()],
                 "use_cost_sens": [use_cost_sens],
-                "cost_sens_scalar": [cost_sens_scalar]
+                "cost_sens_scalar": [cost_sens_scalar],
+                "tree_depth": [3]
             })
         ])
 
