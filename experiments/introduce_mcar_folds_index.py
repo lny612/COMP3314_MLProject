@@ -13,6 +13,15 @@ CONFIGS = {
     'wine_quality.csv': DEFAULT_CONFIG,
     'wisconsin.csv': DEFAULT_CONFIG,
     'coupon_full.csv': DEFAULT_CONFIG,
+    #'fico_complete.csv': DEFAULT_CONFIG,
+    #'netherlands.csv': DEFAULT_CONFIG,
+    #'spiral.csv': DEFAULT_CONFIG,
+    #'tic-tac-toe.csv': DEFAULT_CONFIG,
+    #'iris_virginica.csv': DEFAULT_CONFIG,
+    #'iris_versicolor.csv': DEFAULT_CONFIG,
+    #'iris_setosa.csv': DEFAULT_CONFIG,
+    #'broward_general_2y.csv': DEFAULT_CONFIG,
+    #'higgs.csv': DEFAULT_CONFIG,
 }
 
 NAN_HANDLING_METHOD = {'ours': DNFTree, 'path-based': TreeClassifierWrapper, 'used-features': ConservativeTree}
@@ -20,7 +29,10 @@ NAN_HANDLING_METHOD = {'ours': DNFTree, 'path-based': TreeClassifierWrapper, 'us
 # map from tree description to a tuple containing
 # the tree classifier and a method to extract the dict of the tree
 BASE_TREES = {
+    #'gosdt': (GOSDTClassifier(regularization=0.01, depth_budget=4,
+                              #verbose=False), lambda tree: gosdt_to_dict(tree.trees_[0].tree)),
     'sklearn': (DecisionTreeClassifier(max_depth=3), lambda tree: sklearn_tree_to_dict(tree.tree_)),
+    #'dl85': (DL85Classifier(max_depth=3), lambda tree: dl85_to_dict(tree.tree_)),
     'sklearn-4': (DecisionTreeClassifier(max_depth=4), lambda tree: sklearn_tree_to_dict(tree.tree_)),
     'sklearn-5': (DecisionTreeClassifier(max_depth=5), lambda tree: sklearn_tree_to_dict(tree.tree_)),
 }
