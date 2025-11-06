@@ -1,0 +1,43 @@
+dataset,var,distance,ks_test_stat,ks_test_p
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[0, 1]",0.0004327008289409,0.0156382297123771,0.1687077347936805
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[11],0.0004705731671532,0.0201795901463603,0.0327276015774306
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[12],0.0001749399612359,0.0119407902560114,0.4661368597184445
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[13],0.000407495425444,0.0101373963327001,0.6751809061290664
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[14],0.0004283310681507,0.0098128869949317,0.7137398402995689
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[15],0.0015406380708767,0.0391696852576824,3.806180508119885e-07
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[16],0.0001106551207447,0.0094456134151865,0.7564907245844845
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[2, 3, 4]",0.0012491725517339,0.0280354430895828,0.0007185206261342
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[5, 6]",0.0010240384228308,0.0277266875871401,0.0008547060549885
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[7],0.0002121355295356,0.0105977713240499,0.6201355016803523
+broward_general_2y_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[8, 9, 10]",0.0022067549866729,0.0442968165629494,5.09128383062465e-09
+compas_complete_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[0, 1, 2, 3, 4, 5, 6, 15]",0.0012162960795274,0.045218066404507,5.148379706644977e-06
+compas_complete_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[7],0.0015298459883049,0.0468927545198731,1.9519572753991425e-06
+compas_complete_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[8, 9, 10, 11, 12, 13, 14]",0.0021584171179398,0.0736649592581795,2.988228137129814e-15
+coupon_full_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[0],0.0005871337032092,0.027043907436779,0.177256057332159
+coupon_full_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[1],0.0015657895440562,0.073240468004479,4.2163402506835195e-08
+coupon_full_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[2],0.0021280087280166,0.0520850367947669,0.0002600810712727
+coupon_full_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[3],0.0021093648115222,0.0560306639476959,6.387513458195611e-05
+coupon_full_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[4],0.0040664018561338,0.1186687879892423,1.4011422129808092e-20
+coupon_full_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[5],0.0009553713971581,0.027137659386524,0.1743177376344939
+coupon_full_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[6, 7]",0.0006724788553227,0.0396963159260098,0.010984038747304
+coupon_full_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[8],0.0015256131309635,0.051343230649499,0.0003348344553355
+dummy_data_alt_mini_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02_100_bootstraps,X1,0.0,0.0,1.0
+dummy_data_alt_mini_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02_100_bootstraps,X2,4.950495049504849e-05,0.0099009900990099,1.0
+dummy_data_alt_mini_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02_100_bootstraps,X3,0.0009940594059406,0.1287128712871287,0.3742702139805806
+fico_complete_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[0, 1, 2, 3]",0.0033675323803164,0.0654364795228621,0.021026148415084
+fico_complete_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[4],0.0011685800276011,0.030762605058669,0.6874760360973008
+fico_complete_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[5],0.0053671685655657,0.103890396384828,2.1485049414891163e-05
+fico_complete_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[6],0.0007113636715146,0.0167001779931427,0.997929089718602
+iris_setosa_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[0],0.0015466666666666,0.045,0.9877895282790692
+iris_setosa_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[1],0.0026399999999999,0.065,0.7933622419382523
+iris_versicolor_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[0, 2]",0.0088310120162297,0.1007139513108614,0.0330319324889829
+iris_versicolor_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[1],0.0361279260299625,0.1704558754681648,1.6604454986114345e-05
+iris_virginica_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[0, 1, 4]",0.0259458034352331,0.0795742866706718,0.004614361114224
+iris_virginica_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[2, 3]",0.0256010255034747,0.0928339419261772,0.0005206174035845
+spiral_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[0, 1, 2, 7]",0.0064515174707697,0.0856861952278492,2.192920414045846e-09
+spiral_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[3, 4, 5, 6]",0.003779573230901,0.049866183386523,0.0018251960571334
+wine_quality_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[0, 1, 2, 3, 4, 5, 6, 7, 8]",0.0007528402890039,0.0374935991483652,1.1985351274826006e-05
+wine_quality_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[10],1.4779915300180558e-05,0.0011967113030407,1.0
+wine_quality_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[11],0.0,0.0,1.0
+wine_quality_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,"[12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]",0.0003098776724214,0.0256384505126926,0.0071967111459033
+wine_quality_100_resamples_triv_ext_True_db4_reg_0.02_rashomon_bound_adder_0.02,[9],9.071383946996548e-06,0.0015735136126615,1.0

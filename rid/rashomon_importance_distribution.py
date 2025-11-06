@@ -250,7 +250,7 @@ class RashomonImportanceDistribution:
         y = df_unbinned.iloc[:, -1]
         enc = ThresholdGuessBinarizer(n_estimators=n_est, max_depth=max_depth, random_state=42)
         enc.set_output(transform="pandas")
-        X_binned_full = enc.fit_transform(X_binned_full, y)
+        X_binned_full = enc.fit_transform(X_all, y)
         bin_map = enc.feature_map()
 
         df = pd.concat((X_binned_full, y), axis=1)
@@ -353,8 +353,8 @@ class RashomonImportanceDistribution:
         self._process_and_save_results(results_list, 'mr')
 
     def _process_and_save_results(self, results_list, result_type='mr'):
-        target_div_model_reliances = [{'means':[]} for i in range(self.n_vars)]
-        target_sub_model_reliances = [{'means':[]} for i in range(self.n_vars)]
+        target_div_model_reliances = {var: {'means':[]} for var in self.binning_map.keys()}
+        target_sub_model_reliances = {var: {'means':[]} for var in self.binning_map.keys()}
         
         start = time.time()
         for bootstrap_ind, val in enumerate(results_list):
@@ -364,7 +364,7 @@ class RashomonImportanceDistribution:
                 continue
 
             cur_model_reliance = val[0]
-            for var in range(self.n_vars):
+            for var in self.binning_map.keys():
                 if self.use_joint:
                     target_div_model_reliances[var][bootstrap_ind] = cur_model_reliance[var]
                 else:
@@ -380,7 +380,7 @@ class RashomonImportanceDistribution:
                 pickle.dump(target_div_model_reliances, f, protocol=pickle.HIGHEST_PROTOCOL)
 
             cur_model_reliance = val[1]
-            for var in range(self.n_vars):
+            for var in self.binning_map.keys():
                 if self.use_joint:
                     target_sub_model_reliances[var][bootstrap_ind] = cur_model_reliance[var]
                 else:
@@ -425,8 +425,8 @@ class RashomonImportanceDistribution:
             and os.path.isfile(os.path.join(self.cache_dir, f'sub_cmrs_{"for_joint_" if self.use_joint else ""}bootstrap_{bootstrap_ind}.pickle')):
             return None
 
-        div_model_reliances = [{'means':[]} for i in range(self.n_vars)]
-        sub_model_reliances = [{'means':[]} for i in range(self.n_vars)]
+        div_model_reliances = {var: {'means':[]} for var in self.binning_map.keys()}
+        sub_model_reliances = {var: {'means':[]} for var in self.binning_map.keys()}
 
         resampled_df = pd.read_csv(os.path.join(self.cache_dir, f'tmp_bootstrap_{bootstrap_ind}.csv'))
         unbinned_resampled_df = pd.read_csv(os.path.join(self.cache_dir, f'tmp_bootstrap_unbinned_{bootstrap_ind}.csv'))
@@ -476,8 +476,8 @@ class RashomonImportanceDistribution:
             and os.path.isfile(os.path.join(self.cache_dir, f'sub_mrs_{"for_joint_" if self.use_joint else ""}bootstrap_{bootstrap_ind}.pickle')):
             return None
 
-        div_model_reliances = [{'means':[]} for i in range(self.n_vars)]
-        sub_model_reliances = [{'means':[]} for i in range(self.n_vars)]
+        div_model_reliances = {var: {'means':[]} for var in self.binning_map.keys()}
+        sub_model_reliances = {var: {'means':[]} for var in self.binning_map.keys()}
 
         resampled_df = pd.read_csv(os.path.join(self.cache_dir, f'tmp_bootstrap_{bootstrap_ind}.csv'))
         print("resampled_df.shape", resampled_df.shape)
@@ -528,18 +528,18 @@ class RashomonImportanceDistribution:
         '''
         n_bootstraps = 0
         if not self.use_joint:
-            combined_mrs = [{'means':[]} for i in range(n_vars)]
+            combined_mrs = {var: {'means':[]} for var in self.binning_map.keys()}
         else:
-            combined_mrs = [{} for i in range(n_vars)]
+            combined_mrs = {var: {} for var in self.binning_map.keys()}
         skips = []
         for file_path in file_paths:
             #try:
             with open(file_path, 'rb') as f:
-            
+
                 model_reliances = pickle.load(f)
                 # Add the information from this R-set to one mega trie
                 # For each variable
-                for var in range(n_vars):
+                for var in self.binning_map.keys():
                     # For each value in ['mean', observed_mr_1, observed_mr_2, ...]
                     if not self.use_joint:
                         for key in model_reliances[var].keys():
@@ -599,7 +599,7 @@ class RashomonImportanceDistribution:
             values = []
             probabilities = []
             # For each variable
-            for var in range(n_vars):
+            for var in self.binning_map.keys():
                 # For each observed MR
                 for key in combined_mrs[var].keys():
                     if key == 'means':
@@ -623,7 +623,7 @@ class RashomonImportanceDistribution:
             model_reliance_df['prob'] = true_probabilities
 
             model_reliance_df['count'] = 0
-            for var in range(n_vars):
+            for var in self.binning_map.keys():
                 cur_prob = model_reliance_df[model_reliance_df['var'] == var]['prob']
                 model_reliance_df.loc[model_reliance_df['var'] == var, 'count'] = (cur_prob / cur_prob.min()).round().astype(int)
         else:
@@ -640,19 +640,40 @@ class RashomonImportanceDistribution:
             rid_with_counts = {}
             if self.verbose:
                 print("Processing ours with counts")
-            for var in range(self.n_vars):
+            for var in self.binning_map.keys():
                 if self.verbose:
                     print(f"Starting var {var}")
-                rid_with_counts[var] = self.vi_dataframe[self.vi_dataframe['var'] == var]['val'].values
-                rid_with_counts[var] = np.repeat(self.vi_dataframe[self.vi_dataframe['var'] == var]['val'].values,
-                                                            self.vi_dataframe[self.vi_dataframe['var'] == var]['count'].values)
-        else:
-            rid_with_counts = [None] * self.n_vars
-            for v in range(self.n_vars):
-                if self.n_resamples is not None:
-                    rid_with_counts[v] = np.concatenate([self.vi_dataframe[v][b] for b in range(self.n_resamples)])
+                var_data = self.vi_dataframe[self.vi_dataframe['var'] == var]
+                if len(var_data) == 0:
+                    print(f"Warning: No data found for variable {var}")
+                    rid_with_counts[var] = np.array([])
                 else:
-                    rid_with_counts[v] = np.concatenate([self.vi_dataframe[v][b] for b in range(1)])
+                    val_values = var_data['val'].values
+                    count_values = var_data['count'].values
+                    if self.verbose:
+                        print(f"Variable {var}: val_values type = {type(val_values)}, count_values type = {type(count_values)}")
+                        print(f"Variable {var}: val_values[0] = {val_values[0] if len(val_values) > 0 else 'empty'}, type = {type(val_values[0]) if len(val_values) > 0 else 'N/A'}")
+                    rid_with_counts[var] = np.repeat(val_values, count_values.astype(int))
+                    if self.verbose:
+                        print(f"Variable {var}: created array of shape {rid_with_counts[var].shape}, type {type(rid_with_counts[var])}")
+        else:
+            rid_with_counts = {}
+            for v in self.binning_map.keys():
+                if self.n_resamples is not None:
+                    values = []
+                    for b in range(self.n_resamples):
+                        val = self.vi_dataframe[v][b]
+                        # Convert scalar to 1D array if needed
+                        if np.ndim(val) == 0:
+                            val = np.array([val])
+                        values.append(val)
+                    rid_with_counts[v] = np.concatenate(values)
+                else:
+                    val = self.vi_dataframe[v][0]
+                    # Convert scalar to 1D array if needed
+                    if np.ndim(val) == 0:
+                        val = np.array([val])
+                    rid_with_counts[v] = val
             
         return rid_with_counts
 

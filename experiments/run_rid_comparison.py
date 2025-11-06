@@ -61,8 +61,18 @@ def run_rid_comparison(df, dataset_name, tf_config, binning_map=None, n_resample
         all_dupe_rates = all_dupe_rates + [v for v in tf.get_duplication_rates().values()]
     print(f"Duplication rates: {all_dupe_rates}")
 
-    for i, v in enumerate(df.columns[:-1]):
+    for i in rid.binning_map.keys():
+        v = rid.binning_map[i]
         print(f"Plotting for var {v}")
+
+        # Extract a clean feature name for the title
+        if isinstance(v, list):
+            # If v is a list of binarized features, extract the base feature name
+            # e.g., ['age<=25', 'age<=30'] -> 'age'
+            feature_name = str(v[0]).split('<=')[0].split('=')[0].split('>')[0] if len(v) > 0 else str(i)
+        else:
+            feature_name = str(v)
+
         vi_estimates = list(rid.rid_with_counts[i])
         vi_names = [f"Original RID"] * len(list(rid.rid_with_counts[i]))
         if true_mr_df is not None:
@@ -84,20 +94,20 @@ def run_rid_comparison(df, dataset_name, tf_config, binning_map=None, n_resample
 
         plt.figure(figsize=(10, 8))
         ax = sns.histplot(
-            data=results, 
-            x="Model Reliance Value", 
-            hue="variable", 
-            common_norm=False, 
+            data=results,
+            x="Model Reliance Value",
+            hue="variable",
+            common_norm=False,
             bins=20,
             alpha=0.5, multiple='dodge',
             fill=True, stat="percent")
         ax.legend_.set_title(None)
-        ax.set_title(f'RID Distribution of {v} Importance')
+        ax.set_title(f'RID Distribution of {feature_name} Importance')
 
-        
+
         os.makedirs(f'rid_plots_1_22/{dataset_name}/', exist_ok=True)
         plt.tight_layout()
-        plt.savefig(f'rid_plots_1_22/{dataset_name}/rid_comparison_{v}_alt.pdf')
+        plt.savefig(f'rid_plots_1_22/{dataset_name}/rid_comparison_{feature_name}_alt.pdf')
         plt.clf()
 
         ks_test = stats.kstest(rid_unique.rid_with_counts[i], rid.rid_with_counts[i])

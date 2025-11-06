@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python reproduce_case_study_1.py:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
